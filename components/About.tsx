@@ -6,23 +6,23 @@ export default function About() {
   const features = [
     {
       icon: Flame,
-      title: "Effective Heat Conductor",
-      description: "High-quality natural wood accelerates burning",
+      title: "Efficient Burning Power",
+      description: "Coconut charcoal delivers consistent, long-lasting heat.",
     },
     {
       icon: Award,
-      title: "Customizable Sizes",
-      description: "Shapes tailored to your grilling purposes",
+      title: "Customizable Shapes & Sizes",
+      description: "Available in cubes, hexagonal, and briquette forms to suit your needs.",
     },
     {
       icon: Globe,
-      title: "Versatile Use",
-      description: "Perfect for industrial and household needs",
+      title: "Global Export Quality",
+      description: "Trusted by clients worldwide for shisha, BBQ, and industrial applications.",
     },
     {
       icon: Leaf,
-      title: "Affordable Excellence",
-      description: "Efficiency and quality at competitive prices",
+      title: "Eco-Friendly & Sustainable",
+      description: "Made from 100% coconut shells. Renewable, smokeless, and chemical-free.",
     },
   ];
 
@@ -45,17 +45,16 @@ export default function About() {
           {/* Text Content */}
           <div className="space-y-6">
             <p className="text-lg text-neutral-text dark:text-neutral-text-dark leading-relaxed">
-              Asia Trading Export is a leading Indonesia wood charcoal supplier,
-              delivering premium products to global markets. Renowned for our
-              commitment to quality and exceptional service, we cater to clients
-              across Asia, the Middle East, and beyond.
+              Asia Trading Export is a leading Indonesian coconut charcoal supplier,
+              proudly delivering eco-friendly and premium-quality products to global markets.
+              Our expertise lies in producing clean, sustainable, and high-performance
+              charcoal products that meet international standards.
             </p>
             <p className="text-lg text-neutral-text dark:text-neutral-text-dark leading-relaxed">
-              We specialize in high-performance wood charcoal designed to meet
-              specific customer needs, ensuring every product is tasteless,
-              odorless, long-burning, and eco-friendly. Each package is
-              meticulously inspected to guarantee consistency, superior density,
-              and strong, uniform shapes that exceed industry standards.
+              We specialize in high-quality coconut shell charcoal, known for its
+              odorless, smokeless, and long-burning properties. Ideal for shisha,
+              grilling, and industrial use. Each batch is carefully inspected to ensure
+              uniform density, durability, and excellent combustion efficiency.
             </p>
           </div>
 
@@ -63,8 +62,8 @@ export default function About() {
           <div className="relative px-6 sm:px-0">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="/charcoal.jpg"
-                alt="Premium wood charcoal"
+                src="/charcoal.png"
+                alt="Premium coconut charcoal"
                 className="w-full h-96 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/20 to-transparent"></div>

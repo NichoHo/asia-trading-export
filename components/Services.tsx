@@ -6,14 +6,14 @@ export default function Services() {
   const services = [
     {
       icon: Flame,
-      title: "Premium Charcoal",
+      title: "Premium Coconut Charcoal",
       description:
-        "High-quality wood charcoal sourced from the finest natural hardwood. Our products are tasteless, odorless, and long-burning, perfect for both industrial and household applications.",
+        "Top-grade coconut shell charcoal sourced from Indonesia’s finest plantations. Our charcoal is odorless, smokeless, long-burning, and made from 100% natural coconut shells. Perfect for shisha, BBQ, and industrial applications.",
       features: [
-        "Customizable sizes and shapes",
-        "Superior density and consistency",
-        "Eco-friendly and sustainable",
-        "Competitive pricing",
+        "Available in cube, hexagonal, and briquette forms",
+        "High heat output with minimal ash",
+        "Eco-friendly and sustainable production",
+        "Consistent quality and competitive pricing",
       ],
       color: "from-secondary to-secondary-light dark:from-secondary-dark dark:to-secondary-light",
     },
@@ -21,12 +21,12 @@ export default function Services() {
       icon: Truck,
       title: "Global Logistics",
       description:
-        "Reliable shipping and distribution services ensuring your orders reach you safely and on time. We handle all export documentation and customs procedures for a seamless experience.",
+        "Reliable export and shipping services to ensure your coconut charcoal arrives safely and on time. We handle all logistics, documentation, and customs clearance with precision and care.",
       features: [
         "Worldwide shipping coverage",
-        "Expert logistics handling",
-        "Secure packaging",
-        "Timely delivery guarantee",
+        "Expert logistics management",
+        "Durable, moisture-proof packaging",
+        "On-time delivery guarantee",
       ],
       color: "from-primary to-primary-light dark:from-primary-dark dark:to-accent-dark",
     },
@@ -34,12 +34,12 @@ export default function Services() {
       icon: MessageSquare,
       title: "Expert Consultation",
       description:
-        "Professional guidance to help you choose the right charcoal products for your specific needs. Our team provides tailored solutions and ongoing support throughout your business journey.",
+        "Our team provides professional guidance to help you choose the right coconut charcoal products for your business. We offer tailored solutions and market insights for long-term success.",
       features: [
-        "Product recommendations",
-        "Market insights",
-        "Custom order planning",
-        "Dedicated support team",
+        "Product selection support",
+        "Custom packaging options",
+        "Export compliance assistance",
+        "Dedicated after-sales support",
       ],
       color: "from-accent to-accent-dark dark:from-accent-dark dark:to-primary-light",
     },
@@ -49,17 +49,17 @@ export default function Services() {
     {
       icon: Package,
       title: "Quality Inspection",
-      description: "Every package meticulously inspected for consistency",
+      description: "Each batch is thoroughly tested for density, shape, and moisture levels",
     },
     {
       icon: Shield,
       title: "Quality Guarantee",
-      description: "Products that exceed industry standards",
+      description: "We ensure consistency and performance that exceed international standards",
     },
     {
       icon: Clock,
       title: "Fast Processing",
-      description: "Efficient order fulfillment and quick turnaround",
+      description: "Quick response times and efficient order fulfillment",
     },
   ];
 
@@ -76,8 +76,7 @@ export default function Services() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent dark:from-primary-dark dark:to-accent-dark mx-auto rounded-full mb-6"></div>
           <p className="text-lg text-neutral-subtext dark:text-neutral-subtext-dark max-w-2xl mx-auto">
-            Comprehensive solutions for all your wood charcoal needs, from
-            sourcing to delivery
+            Comprehensive solutions for all your coconut charcoal needs — from production to export.
           </p>
         </div>
 

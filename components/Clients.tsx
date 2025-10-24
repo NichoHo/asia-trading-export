@@ -41,7 +41,7 @@ export default function Clients() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent dark:from-primary-dark dark:to-accent-dark mx-auto rounded-full mb-6"></div>
           <p className="text-lg text-neutral-subtext dark:text-neutral-subtext-dark max-w-2xl mx-auto">
-            We proudly export our premium wood charcoal to partners and clients across the globe
+            We proudly export our premium coconut charcoal to partners and clients across the globe
           </p>
         </div>
 

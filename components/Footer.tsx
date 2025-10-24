@@ -28,7 +28,7 @@ export default function Footer() {
               Asia Trading Export
             </h3>
             <p className="text-neutral-subtext-dark mb-6 leading-relaxed">
-              Leading Indonesia wood charcoal supplier, delivering premium
+              Leading Indonesia coconut charcoal supplier, delivering premium
               products to global markets with commitment to quality and
               exceptional service.
             </p>

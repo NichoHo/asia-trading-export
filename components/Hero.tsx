@@ -1,8 +1,6 @@
 "use client";
 
 export default function Hero() {
-  const tags = ["#Import", "#ReliableShipping", "#BestProducts", "#Export"];
-
   return (
     <section
       id="home"
@@ -24,12 +22,12 @@ export default function Hero() {
         <div className="max-w-3xl">
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Delivering Quality Wood Charcoal Around The World
+            Delivering Premium Coconut Charcoal Around The World
           </h1>
 
           {/* Description */}
           <p className="text-base sm:text-lg md:text-xl text-neutral-light/90 dark:text-neutral-text-dark/90 mb-12 leading-relaxed">
-            Our high-quality hardwood charcoal burns faster, comes in customizable sizes, and is a top choice for industrial and household use thanks to its efficiency and affordability.
+            Our high-quality coconut shell charcoal is eco-friendly, long-lasting, and produces minimal smoke. Perfect for shisha, BBQ, and industrial applications. Enjoy cleaner, more sustainable energy with our trusted exports.
           </p>
 
           {/* CTA Buttons */}
