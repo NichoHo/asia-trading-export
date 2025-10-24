@@ -1,0 +1,43 @@
+Design Principles
+Principle	Description
+Brand consistency	Use logo colors (deep blue & red) in both modes.
+Contrast & readability	Maintain 4.5:1 minimum contrast ratio for text.
+Visual harmony	Keep spacing, typography, and color relationships consistent.
+Subtle dark mode	Prioritize dark navy tones instead of pure black for comfort.
+
+Palette Summary:
+Role	Light Mode	Dark Mode	Usage
+Background	#F8FAFC (neutral white)	#0B1221 (deep navy)	Page background
+Surface / Card	#FFFFFF	#1A2235	Cards, containers
+Primary	#004AAD	#4C8EF7	Buttons, links
+Secondary	#D62828	#FF5C5C	Highlights, CTAs
+Accent	#00B4D8	#4FD1C5	Icons, subtle glow
+Text Primary	#1E293B	#E2E8F0	Headings, nav links
+Text Secondary	#475569	#94A3B8	Paragraphs
+Border / Divider	#E2E8F0	#334155	Lines, outlines
+
+Typography
+Choose Inter (modern, readable) + Plus Jakarta Sans (elegant serif for headings).
+
+Font System:
+Element	Font	Size (Desktop)	Weight	Example
+Hero Title (h1)	Plus Jakarta Sans	4xl–6xl	700	"Premium Wood Charcoal Exporter"
+Section Titles (h2)	Plus Jakarta Sans	3xl	600	"Our Services"
+Subtitles / h3	Inter	xl–2xl	600	"Logistics"
+Body Text	Inter	base–lg	400–500	Paragraphs
+Nav / Buttons	Inter	sm–base	500	Uppercase optional
+
+Spacing System
+Keep consistent padding/margin for a clean flow.
+Use	Spacing (Tailwind)	Example
+Section padding	py-20 px-6	Large breathing room
+Card padding	p-6	Inside boxes
+Container max width	max-w-6xl mx-auto	Centered content
+Vertical gap	gap-8	Between grid items
+
+Responsive Rules
+Screen	Behavior
+<768px (Mobile)	Single-column layout, larger tap areas
+769–1080px (Tablet)	Two-column grids for Services & Clients
+>1280px (Desktop)	Max width max-w-6xl, full hero banner
+Tailwind handles this automatically with prefixes like md:, lg:, etc.
