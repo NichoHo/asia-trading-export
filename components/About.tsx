@@ -45,12 +45,13 @@ export default function About() {
     autoplaySpeed: 3500,
     arrows: false,
     fade: true,
+    adaptiveHeight: true,
   };
 
   return (
     <section
       id="about"
-      className="py-20 bg-neutral-light dark:bg-neutral-dark transition-colors duration-300"
+      className="py-20 bg-neutral-light dark:bg-neutral-dark transition-colors duration-300 overflow-x-clip"
     >
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Header */}
@@ -83,7 +84,7 @@ export default function About() {
                     <img
                       src={src}
                       alt={`Gallery image ${i + 1}`}
-                      className="w-full h-96 object-cover"
+                      className="w-full aspect-[16/9] sm:aspect-[4/3] object-cover"
                     />
                   </div>
                 ))}
