@@ -8,7 +8,7 @@ export default function Services() {
       icon: Flame,
       title: "Premium Coconut Charcoal",
       description:
-        "Top-grade coconut shell charcoal sourced from Indonesia’s finest plantations. Our charcoal is odorless, smokeless, long-burning, and made from 100% natural coconut shells. Perfect for shisha, BBQ, and industrial applications.",
+        "Premium Indonesian Coconut Shell Charcoal Exporter — Asia Trading Export produces high-quality coconut charcoal made from 100% natural coconut shells. Our charcoal is eco-friendly, smokeless, odorless, and long-lasting.Sourced from sustainable Indonesian plantations, we ensure consistent quality and high heat output with minimal ash.",
       features: [
         "Available in cube, hexagonal, and briquette forms",
         "High heat output with minimal ash",
@@ -21,7 +21,7 @@ export default function Services() {
       icon: Truck,
       title: "Global Logistics",
       description:
-        "Reliable export and shipping services to ensure your coconut charcoal arrives safely and on time. We handle all logistics, documentation, and customs clearance with precision and care.",
+        "We provide global coconut charcoal export and logistics services, ensuring safe and on-time delivery worldwide. We international shipping, export documentation, and customs clearance with care and efficiency.With our worldwide export coverage and moisture-proof packaging, we guarantee product quality from Indonesia to your port.",
       features: [
         "Worldwide shipping coverage",
         "Expert logistics management",
@@ -34,7 +34,7 @@ export default function Services() {
       icon: MessageSquare,
       title: "Expert Consultation",
       description:
-        "Our team provides professional guidance to help you choose the right coconut charcoal products for your business. We offer tailored solutions and market insights for long-term success.",
+        "Our experts provide consultation for coconut charcoal buyers and importers to help you choose the ideal product for your market. We offer custom packaging, export compliance support, and valuable market insights for distributors and wholesalers seeking long-term success.",
       features: [
         "Product selection support",
         "Custom packaging options",

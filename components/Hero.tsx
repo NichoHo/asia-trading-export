@@ -22,12 +22,12 @@ export default function Hero() {
         <div className="max-w-3xl">
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Delivering Premium Coconut Charcoal Around The World
+            Leading Indonesian Coconut Charcoal Supplier & Global Exporter
           </h1>
 
           {/* Description */}
           <p className="text-base sm:text-lg md:text-xl text-neutral-light/90 dark:text-neutral-text-dark/90 mb-12 leading-relaxed">
-            Our high-quality coconut shell charcoal is eco-friendly, long-lasting, and produces minimal smoke. Perfect for shisha, BBQ, and industrial applications. Enjoy cleaner, more sustainable energy with our trusted exports.
+            Asia Trading Export delivers high-quality coconut shell charcoal worldwide. Our eco-friendly products are made from 100% natural coconut shells. Trusted by international partners for consistent quality and reliable export services
           </p>
 
           {/* CTA Buttons */}

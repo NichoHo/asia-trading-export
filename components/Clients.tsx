@@ -12,7 +12,7 @@ import { MapPin, Globe2 } from "lucide-react";
 
 const geoUrl = "/world-110m.json";
 
-const markers = [
+const markers : { name: string; coordinates: [number, number]; region: string }[] = [
   { name: "Canada", coordinates: [-106.3468, 56.1304], region: "North America" },
   { name: "United Kingdom", coordinates: [-3.436, 55.3781], region: "Europe" },
   { name: "Denmark", coordinates: [9.5018, 56.2639], region: "Europe" },
@@ -21,12 +21,16 @@ const markers = [
   { name: "Jordan", coordinates: [36.2384, 30.5852], region: "Middle East" },
   { name: "Iraq", coordinates: [43.6793, 33.2232], region: "Middle East" },
   { name: "Saudi Arabia", coordinates: [45.0792, 23.8859], region: "Middle East" },
-  { name: "Yemen", coordinates: [48.5164, 15.5527], region: "Middle East" },
+  { name: "Ivory Coast (Abidjan)", coordinates: [-4.0083, 5.3599], region: "Africa" },
+  { name: "Brazil", coordinates: [-47.8825, -15.7942], region: "South America" },
+  { name: "Indonesia (Headquarters)", coordinates: [113.9213, -0.7893], region: "Southeast Asia" },
+
 ];
 
 export default function Clients() {
-  const [selectedCountry, setSelectedCountry] = useState(null);
-  const [hoveredCountry, setHoveredCountry] = useState(null);
+  const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
+  const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
+
 
   return (
     <section
@@ -98,7 +102,9 @@ export default function Clients() {
                         <circle
                           r={selectedCountry === marker.name ? 10 : 7}
                           fill={
-                            selectedCountry === marker.name || hoveredCountry === marker.name
+                            marker.name.includes("Indonesia")
+                              ? "#D62828" // 🔴 always red for Indonesia
+                              : selectedCountry === marker.name || hoveredCountry === marker.name
                               ? "#D62828"
                               : "#004AAD"
                           }
@@ -106,7 +112,9 @@ export default function Clients() {
                           strokeWidth={2}
                           className="transition-all duration-300"
                           style={{
-                            filter: selectedCountry === marker.name
+                            filter: marker.name.includes("Indonesia")
+                              ? "drop-shadow(0 4px 8px rgba(214, 40, 40, 0.5))"
+                              : selectedCountry === marker.name
                               ? "drop-shadow(0 4px 8px rgba(214, 40, 40, 0.5))"
                               : "drop-shadow(0 2px 4px rgba(0, 74, 173, 0.3))",
                           }}

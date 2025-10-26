@@ -1,6 +1,9 @@
 "use client";
 
 import { Award, Globe, Leaf, Flame } from "lucide-react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function About() {
   const features = [
@@ -26,6 +29,24 @@ export default function About() {
     },
   ];
 
+  const galleryImages = [
+    "/Coco_Charcoal1.jpg",
+    "/Coco_Charcoal2.jpg",
+    "/Coco_Charcoal3.jpg",
+  ];
+
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3500,
+    arrows: false,
+    fade: true,
+  };
+
   return (
     <section
       id="about"
@@ -45,29 +66,31 @@ export default function About() {
           {/* Text Content */}
           <div className="space-y-6">
             <p className="text-lg text-neutral-text dark:text-neutral-text-dark leading-relaxed">
-              Asia Trading Export is a leading Indonesian coconut charcoal supplier,
-              proudly delivering eco-friendly and premium-quality products to global markets.
-              Our expertise lies in producing clean, sustainable, and high-performance
-              charcoal products that meet international standards.
+              Asia Trading Export is a leading Indonesian manufacturer and exporter of premium coconut shell charcoal.
+              With over 20 years of experience, we specialize in producing eco-friendly, smokeless, and long-burning charcoal for shisha, BBQ, and industrial applications.
             </p>
             <p className="text-lg text-neutral-text dark:text-neutral-text-dark leading-relaxed">
-              We specialize in high-quality coconut shell charcoal, known for its
-              odorless, smokeless, and long-burning properties. Ideal for shisha,
-              grilling, and industrial use. Each batch is carefully inspected to ensure
-              uniform density, durability, and excellent combustion efficiency.
+              Our expertise lies in delivering sustainable charcoal solutions to global partners across Asia, Europe, the Middle East, and North America. Every batch of our coconut charcoal is carefully inspected to ensure uniform density, high heat output, and low ash content for exceptional combustion performance.
             </p>
           </div>
 
-          {/* Image */}
+          {/* Image Gallery */}
           <div className="relative px-6 sm:px-0">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src="/charcoal.png"
-                alt="Premium coconut charcoal"
-                className="w-full h-96 object-cover"
-              />
+              <Slider {...sliderSettings}>
+                {galleryImages.map((src, i) => (
+                  <div key={i}>
+                    <img
+                      src={src}
+                      alt={`Gallery image ${i + 1}`}
+                      className="w-full h-96 object-cover"
+                    />
+                  </div>
+                ))}
+              </Slider>
               <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/20 to-transparent"></div>
             </div>
+
             {/* Floating Badge */}
             <div className="absolute -bottom-6 left-0 sm:-left-6 bg-secondary dark:bg-secondary-dark text-white p-6 rounded-xl shadow-xl">
               <div className="text-3xl font-bold">20+</div>
