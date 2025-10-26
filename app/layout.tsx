@@ -10,6 +10,9 @@ export const metadata = {
   title: "Asia Trading Export | Premium Coconut Charcoal Manufacturer & Exporter",
   description:
     "Asia Trading Export is Indonesia’s leading manufacturer and exporter of premium coconut shell charcoal. Eco-friendly, smokeless, and long-burning — trusted worldwide for shisha, BBQ, and industrial use.",
+  icons: {
+    icon: '/favicon.ico',  // This points to public/favicon.ico
+  },
   keywords:
     "coconut charcoal, coconut shell charcoal, Indonesia charcoal exporter, shisha charcoal, BBQ charcoal, sustainable charcoal, eco-friendly charcoal, charcoal supplier Asia",
   openGraph: {
