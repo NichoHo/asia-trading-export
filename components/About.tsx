@@ -45,7 +45,6 @@ export default function About() {
     autoplaySpeed: 3500,
     arrows: false,
     fade: true,
-    adaptiveHeight: true,
   };
 
   return (
@@ -77,15 +76,11 @@ export default function About() {
 
           {/* Image Gallery */}
           <div className="relative px-6 sm:px-0">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl h-56 sm:h-72 md:h-96">
               <Slider {...sliderSettings}>
                 {galleryImages.map((src, i) => (
                   <div key={i}>
-                    <img
-                      src={src}
-                      alt={`Gallery image ${i + 1}`}
-                      className="w-full aspect-[16/9] sm:aspect-[4/3] object-cover"
-                    />
+                    <img src={src} alt={`Gallery image ${i + 1}`} className="w-full aspect-[16/9] sm:aspect-[4/3] object-cover" />
                   </div>
                 ))}
               </Slider>
