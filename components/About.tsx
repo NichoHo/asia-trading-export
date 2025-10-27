@@ -37,7 +37,7 @@ export default function About() {
     autoplay: !prefersReduced,
     autoplaySpeed: 3500,
     arrows: false,
-    fade: true, // kept for tablet/desktop
+    fade: true, // keep fade for tablet/desktop
     swipe: true,
     initialSlide: 0,
     waitForAnimate: false,
@@ -45,12 +45,12 @@ export default function About() {
     pauseOnFocus: true,
     pauseOnDotsHover: true,
     lazyLoad: "ondemand",
-    adaptiveHeight: false,
+    adaptiveHeight: false, // prevents slick-track height creep
     responsive: [
       {
         breakpoint: 640, // mobile
         settings: {
-          fade: false,   // fixes iOS/Android blank first slide
+          fade: false,    // fixes WebKit blank first slide
           dots: true,
           arrows: false,
           autoplaySpeed: 5000,
@@ -95,8 +95,8 @@ export default function About() {
 
           {/* Image Gallery */}
           <div className="relative px-2 sm:px-0">
-            {/* Card wrapper with reserved space for dots */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl pb-12 sm:pb-0 z-0">
+            {/* Card wrapper; pb ensures dots never clash with badge */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl pb-12 sm:pb-10 z-0">
               {/* 1) Aspect-ratio spacer reserves the height */}
               <div className="relative w-full aspect-[16/9] sm:aspect-[4/3]" />
 
@@ -132,27 +132,22 @@ export default function About() {
               {/* 3) Overlay below dots */}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary-dark/20 to-transparent z-0" />
 
-              {/* Badge INSIDE the picture on small screens (bottom-left corner) */}
+              {/* 4) Badge IN THE IMAGE corner on all breakpoints */}
               <div
-                className="absolute z-30 bottom-3 left-3
-                           sm:static sm:z-auto"
-                aria-hidden="true"
-              />
-            </div>
-
-            {/* Badge element (one element, responsive positioning) */}
-            <div
-              className="
-                absolute z-30 bottom-3 left-3
-                sm:bottom-auto sm:left-0 sm:-bottom-6 sm:translate-x-0
-                bg-secondary dark:bg-secondary-dark text-white px-5 py-4 sm:p-6
-                rounded-xl shadow-xl text-center
-              "
-              role="note"
-              aria-label="Over 20 years experience"
-            >
-              <div className="text-2xl sm:text-3xl font-bold leading-none">20+</div>
-              <div className="text-xs sm:text-sm font-medium mt-1">Years Experience</div>
+                className="
+                  absolute z-30
+                  bottom-3 left-3            /* mobile corner */
+                  sm:bottom-4 sm:left-4      /* desktop/tablet corner */
+                  bg-secondary dark:bg-secondary-dark text-white
+                  px-5 py-4 sm:px-6 sm:py-5
+                  rounded-xl shadow-xl text-center
+                "
+                role="note"
+                aria-label="Over 20 years experience"
+              >
+                <div className="text-2xl sm:text-3xl font-bold leading-none">20+</div>
+                <div className="text-xs sm:text-sm font-medium mt-1">Years Experience</div>
+              </div>
             </div>
           </div>
         </div>
@@ -186,6 +181,7 @@ export default function About() {
     </section>
   );
 }
+
 
 
 
