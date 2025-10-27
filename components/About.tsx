@@ -94,50 +94,56 @@ export default function About() {
           </div>
 
           {/* Image Gallery */}
-          <div className="relative px-2 sm:px-0">
-            {/* Card wrapper; pb ensures dots never clash with badge */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl pb-12 sm:pb-10 z-0">
-              {/* 1) Aspect-ratio spacer reserves the height */}
-              <div className="relative w-full aspect-[16/9] sm:aspect-[4/3]" />
+          {/* Keep padding here, but anchor badge to the inner relative wrapper to align with the card corner */}
+          <div className="px-2 sm:px-0">
+            {/* Anchor wrapper with NO padding — badge and card align perfectly */}
+            <div className="relative">
+              {/* Card wrapper with reserved space for dots */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl pb-12 sm:pb-10 z-0">
+                {/* Aspect ratio spacer reserves height */}
+                <div className="relative w-full aspect-[16/9] sm:aspect-[4/3]" />
 
-              {/* 2) Slider fills reserved box */}
-              <div
-                className="
-                  absolute inset-0 z-10
-                  [&_.slick-list]:h-full
-                  [&_.slick-track]:h-full
-                  [&_.slick-slide]:h-full
-                  [&_.slick-slide>div]:h-full
-                "
-              >
-                <Slider {...sliderSettings}>
-                  {galleryImages.map((img, i) => (
-                    <div key={i} className="outline-none h-full">
-                      <div className="relative w-full h-full">
-                        <Image
-                          src={img.src}
-                          alt={img.alt}
-                          fill
-                          priority={i === 0}
-                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 640px"
-                          className="object-cover"
-                          draggable={false}
-                        />
+                {/* Slider fills reserved box */}
+                <div
+                  className="
+                    absolute inset-0 z-10
+                    [&_.slick-list]:h-full
+                    [&_.slick-track]:h-full
+                    [&_.slick-slide]:h-full
+                    [&_.slick-slide>div]:h-full
+                  "
+                >
+                  <Slider {...sliderSettings}>
+                    {galleryImages.map((img, i) => (
+                      <div key={i} className="outline-none h-full">
+                        <div className="relative w-full h-full">
+                          <Image
+                            src={img.src}
+                            alt={img.alt}
+                            fill
+                            priority={i === 0}
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 640px"
+                            className="object-cover"
+                            draggable={false}
+                          />
+                        </div>
                       </div>
-                    </div>
-                  ))}
-                </Slider>
+                    ))}
+                  </Slider>
+                </div>
+
+                {/* Overlay behind dots */}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary-dark/20 to-transparent z-0" />
               </div>
 
-              {/* 3) Overlay below dots */}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary-dark/20 to-transparent z-0" />
-
-              {/* 4) Badge IN THE IMAGE corner on all breakpoints */}
+              {/* Badge:
+                  - mobile: inside exact corner (bottom-left)
+                  - sm+: peek out with negative offsets, aligned to the SAME corner */}
               <div
                 className="
                   absolute z-30
-                  bottom-3 left-3            /* mobile corner */
-                  sm:bottom-4 sm:left-4      /* desktop/tablet corner */
+                  bottom-3 left-3
+                  sm:-bottom-4 sm:-left-4
                   bg-secondary dark:bg-secondary-dark text-white
                   px-5 py-4 sm:px-6 sm:py-5
                   rounded-xl shadow-xl text-center
@@ -181,6 +187,7 @@ export default function About() {
     </section>
   );
 }
+
 
 
 
