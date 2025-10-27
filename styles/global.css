@@ -4,6 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.slick-slider,
+.slick-list,
+.slick-track { height: 100%; }
+
+.slick-list { overflow: hidden !important; } /* avoid inner scrollbars */
+.slick-slide { height: 100%; }
+.slick-slide > div { height: 100%; }
+
 html {
   scroll-behavior: smooth;
 }
