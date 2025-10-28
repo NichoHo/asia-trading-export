@@ -40,13 +40,12 @@ export default function Navbar() {
   }, [isDark]);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Clients", href: "#clients" },
-    { name: "Contact", href: "#contact" },
-  ];
-
+  { name: "Home", href: "/" },
+  { name: "About", href: "/#about" },
+  { name: "Products", href: "/#services" },
+  { name: "Clients", href: "/#clients" },
+  { name: "Contact", href: "/#contact" },
+];
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 transform ${

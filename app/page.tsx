@@ -4,6 +4,8 @@ import Services from '@/components/Services'
 import Clients from '@/components/Clients'
 import Contact from '@/components/Contact'
 import "react-tooltip/dist/react-tooltip.css";
+import Products from "@/components/products";
+
 
 export default function Home() {
   return (
@@ -16,3 +18,4 @@ export default function Home() {
     </main>
   )
 }
+

@@ -42,7 +42,7 @@ export default function Hero() {
               href="#services"
               className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg border-2 border-white/30 hover:bg-white/20 hover:border-white/50 transition-all duration-300 text-center"
             >
-              Our Services
+              Our Products
             </a>
           </div>
         </div>

@@ -1,6 +1,7 @@
 "use client";
 
-import { Truck, Flame, MessageSquare, Package, Shield, Clock } from "lucide-react";
+import Link from "next/link";
+import { Truck, Flame, MessageSquare, Package, Shield, Clock, ArrowRight } from "lucide-react";
 
 export default function Services() {
   const services = [
@@ -46,38 +47,34 @@ export default function Services() {
   ];
 
   const additionalServices = [
-    {
-      icon: Package,
-      title: "Quality Inspection",
-      description: "Each batch is thoroughly tested for density, shape, and moisture levels",
-    },
-    {
-      icon: Shield,
-      title: "Quality Guarantee",
-      description: "We ensure consistency and performance that exceed international standards",
-    },
-    {
-      icon: Clock,
-      title: "Fast Processing",
-      description: "Quick response times and efficient order fulfillment",
-    },
+    { icon: Package, title: "Quality Inspection", description: "Each batch is thoroughly tested for density, shape, and moisture levels" },
+    { icon: Shield, title: "Quality Guarantee", description: "We ensure consistency and performance that exceed international standards" },
+    { icon: Clock, title: "Fast Processing", description: "Quick response times and efficient order fulfillment" },
   ];
 
   return (
-    <section
-      id="services"
-      className="py-20 bg-white dark:bg-neutral-surface-dark transition-colors duration-300"
-    >
+    <section id="services" className="py-20 bg-white dark:bg-neutral-surface-dark transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-6">
           <h2 className="text-4xl md:text-5xl font-bold text-neutral-text dark:text-neutral-text-dark mb-4">
-            Our Services
+            Our Products
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent dark:from-primary-dark dark:to-accent-dark mx-auto rounded-full mb-6"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent dark:from-primary-dark dark:to-accent-dark mx-auto rounded-full mb-6" />
           <p className="text-lg text-neutral-subtext dark:text-neutral-subtext-dark max-w-2xl mx-auto">
             Comprehensive solutions for all your coconut charcoal needs — from production to export.
           </p>
+        </div>
+
+        {/* Primary CTA: Explore Products */}
+        <div className="mt-6 mb-12 flex justify-center">
+          <Link
+            href="/products"
+            className="inline-flex items-center gap-2 rounded-xl px-5 py-3 font-medium text-white bg-primary dark:bg-primary-dark hover:brightness-110 shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-primary-dark"
+          >
+            Explore Products
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
 
         {/* Main Services Grid */}
@@ -90,9 +87,7 @@ export default function Services() {
                 className="bg-neutral-light dark:bg-neutral-dark rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-neutral-border dark:border-neutral-border-dark"
               >
                 {/* Icon */}
-                <div
-                  className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-6 shadow-lg`}
-                >
+                <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-6 shadow-lg`}>
                   <Icon className="w-8 h-8 text-white" />
                 </div>
 
@@ -109,27 +104,28 @@ export default function Services() {
                 {/* Features List */}
                 <ul className="space-y-3">
                   {service.features.map((feature, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-start text-sm text-neutral-text dark:text-neutral-text-dark"
-                    >
+                    <li key={idx} className="flex items-start text-sm text-neutral-text dark:text-neutral-text-dark">
                       <svg
                         className="w-5 h-5 text-accent dark:text-accent-dark mr-2 flex-shrink-0 mt-0.5"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       {feature}
                     </li>
                   ))}
                 </ul>
+
+                {/* Secondary inline link (only on first card) */}
+                {index === 0 && (
+                  <div className="mt-6">
+                    <Link href="/products" className="inline-flex items-center gap-1 text-primary dark:text-primary-light hover:underline">
+                      View product range <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                )}
               </div>
             );
           })}
@@ -163,3 +159,5 @@ export default function Services() {
     </section>
   );
 }
+
+
