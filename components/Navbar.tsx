@@ -14,10 +14,8 @@ export default function Navbar() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Add shadow/background on scroll
       setScrolled(currentScrollY > 20);
 
-      // Hide navbar on scroll down, show on scroll up
       if (currentScrollY > lastScrollY && currentScrollY > 80) {
         setShowNavbar(false);
       } else {
@@ -40,88 +38,101 @@ export default function Navbar() {
   }, [isDark]);
 
   const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/#about" },
-  { name: "Products", href: "/#services" },
-  { name: "Clients", href: "/#clients" },
-  { name: "Contact", href: "/#contact" },
-];
+    { name: "Home", href: "/" },
+    { name: "About", href: "/#about" },
+    { name: "Products", href: "/#services" },
+    { name: "Clients", href: "/#clients" },
+    { name: "Contact", href: "/#contact" },
+  ];
+
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 transform ${
-        scrolled
-          ? "bg-white/95 dark:bg-neutral-surface-dark/95 backdrop-blur-sm shadow-lg"
-          : "bg-white dark:bg-neutral-surface-dark"
-      } ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}
-    >
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-neutral-light dark:hover:bg-neutral-dark transition-colors"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? (
-              <X className="w-6 h-6 text-neutral-text dark:text-neutral-text-dark" />
-            ) : (
+    <>
+      {/* TOP NAVBAR (DESKTOP + MOBILE BUTTON) */}
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 transform ${
+          scrolled
+            ? "bg-white/95 dark:bg-neutral-surface-dark/95 backdrop-blur-sm shadow-lg"
+            : "bg-white dark:bg-neutral-surface-dark"
+        } ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}
+      >
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex items-center justify-between h-20">
+
+            {/* Mobile Button */}
+            <button
+              onClick={() => setIsOpen(true)}
+              className="md:hidden p-2 rounded-lg hover:bg-neutral-light dark:hover:bg-neutral-dark transition-colors"
+              aria-label="Open menu"
+            >
               <Menu className="w-6 h-6 text-neutral-text dark:text-neutral-text-dark" />
-            )}
-          </button>
+            </button>
 
-          {/* Logo */}
-          <img
-            src={isDark ? "/logo.png" : "/logo-black.png"}
-            alt="Asia Trading Export Logo"
-            className="h-8 md:h-10 object-contain transition-opacity duration-300"
-          />
+            {/* Logo */}
+            <img
+              src={isDark ? "/logo.png" : "/logo-black.png"}
+              alt="Asia Trading Export Logo"
+              className="h-8 md:h-10 object-contain transition-opacity duration-300"
+            />
 
-          {/* Desktop Links */}
-          <div className="hidden md:flex items-center space-x-1 flex-1 justify-end mr-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="px-4 py-2 text-sm font-medium text-neutral-text dark:text-neutral-text-dark hover:text-primary dark:hover:text-primary-dark transition-colors rounded-lg hover:bg-neutral-light dark:hover:bg-neutral-dark"
-              >
-                {link.name}
-              </a>
-            ))}
+            {/* Desktop Links (unchanged) */}
+            <div className="hidden md:flex items-center space-x-1 flex-1 justify-end mr-8">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="px-4 py-2 text-sm font-medium text-neutral-text dark:text-neutral-text-dark hover:text-primary dark:hover:text-primary-dark transition-colors rounded-lg hover:bg-neutral-light dark:hover:bg-neutral-dark"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
+
+            {/* Dark Mode Toggle */}
+            <button
+              onClick={() => setIsDark(!isDark)}
+              className="p-2 rounded-lg hover:bg-neutral-light dark:hover:bg-neutral-dark transition-colors"
+              aria-label="Toggle dark mode"
+            >
+              {isDark ? (
+                <Sun className="w-5 h-5 text-accent-dark" />
+              ) : (
+                <Moon className="w-5 h-5 text-primary" />
+              )}
+            </button>
           </div>
-
-          {/* Dark Mode Toggle */}
-          <button
-            onClick={() => setIsDark(!isDark)}
-            className="p-2 rounded-lg hover:bg-neutral-light dark:hover:bg-neutral-dark transition-colors"
-            aria-label="Toggle dark mode"
-          >
-            {isDark ? (
-              <Sun className="w-5 h-5 text-accent-dark" />
-            ) : (
-              <Moon className="w-5 h-5 text-primary" />
-            )}
-          </button>
         </div>
-      </div>
+      </nav>
 
-      {/* Mobile Menu */}
+      {/* ------------------------------------------------------ */}
+      {/* MOBILE SLIDE-IN MENU OUTSIDE NAV TO REMOVE TRANSPARENCY */}
+      {/* ------------------------------------------------------ */}
       <div
-        className={`md:hidden fixed top-0 left-0 h-full w-64 bg-white dark:bg-neutral-surface-dark shadow-2xl transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 h-full w-72 bg-white dark:bg-neutral-surface-dark shadow-2xl z-[60] transform transition-transform duration-300 ease-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="flex flex-col h-full pt-24 px-6">
-          {navLinks.map((link, index) => (
+        {/* Header */}
+        <div className="flex items-center justify-between px-6 py-6 border-b border-gray-200 dark:border-neutral-dark">
+          <span className="text-lg font-semibold text-neutral-text dark:text-neutral-text-dark">
+            Menu
+          </span>
+
+          <button
+            onClick={() => setIsOpen(false)}
+            className="p-2 rounded-lg hover:bg-neutral-light dark:hover:bg-neutral-dark transition"
+          >
+            <X className="w-6 h-6 text-neutral-text dark:text-neutral-text-dark" />
+          </button>
+        </div>
+
+        {/* Links */}
+        <div className="flex flex-col px-6 py-4 space-y-3">
+          {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="py-4 text-base font-medium text-neutral-text dark:text-neutral-text-dark hover:text-primary dark:hover:text-primary-dark hover:translate-x-2 transition-all duration-200 border-b border-neutral-border dark:border-neutral-border-dark"
-              style={{
-                animation: isOpen
-                  ? `slideIn 0.3s ease-out ${index * 0.05}s both`
-                  : "none",
-              }}
+              className="py-3 text-base font-medium text-neutral-text dark:text-neutral-text-dark border-b border-gray-200 dark:border-neutral-dark hover:text-primary dark:hover:text-primary-dark transition"
             >
               {link.name}
             </a>
@@ -129,13 +140,15 @@ export default function Navbar() {
         </div>
       </div>
 
+      {/* Backdrop */}
       {isOpen && (
         <div
-          className="md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300"
+          className="fixed inset-0 bg-black/50 z-40"
           onClick={() => setIsOpen(false)}
-          style={{ zIndex: -1 }}
         />
       )}
-    </nav>
+    </>
   );
 }
+
+
