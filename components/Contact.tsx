@@ -42,7 +42,7 @@ export default function Contact() {
                 href="tel:+6287872861273"
                 className="text-xl md:text-2xl font-semibold hover:text-white/80 transition-colors"
               >
-                +62 878 7286 1273
+                +62 821 2318 1975
               </a>
             </div>
 
